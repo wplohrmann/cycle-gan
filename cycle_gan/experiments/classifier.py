@@ -5,11 +5,11 @@ import matplotlib.pyplot as plt
 
 from cycle_gan.models.cnn import get_encoder
 
-image =  plt.imread("data/training/knifey/knifey-01-0001.jpg")
+image =  plt.imread("data/train/knifey/knifey-01-0001.jpg")
 image.shape
 batch_size = 10
 train_ds = tf.keras.preprocessing.image_dataset_from_directory(
-  "data/training",
+  "data/train",
   labels="inferred",
   validation_split=0.2,
   seed=123,
@@ -18,7 +18,7 @@ train_ds = tf.keras.preprocessing.image_dataset_from_directory(
   batch_size=batch_size).map(lambda X, y: (X / 255, tf.one_hot(y, 3)))
 
 val_ds = tf.keras.preprocessing.image_dataset_from_directory(
-  "data/training",
+  "data/train",
   labels="inferred",
   validation_split=0.2,
   seed=123,
