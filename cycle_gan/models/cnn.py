@@ -16,3 +16,6 @@ def get_encoder(num_latent_dim, final_activation=None):
         tf.keras.layers.Flatten(),
         tf.keras.layers.Dense(num_latent_dim, activation=final_activation)
         ])
+
+def get_image2image(input_shape):
+    pass
